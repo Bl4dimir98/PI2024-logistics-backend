@@ -1,9 +1,4 @@
-package logisticsbackend.demo.tour;
-
-import logisticsbackend.demo.hotel.Hotel;
-import logisticsbackend.demo.transport.Transport;
-import logisticsbackend.demo.restaurant.Restaurant;
-import logisticsbackend.demo.user.Users;
+package logisticsbackend.demo.core.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

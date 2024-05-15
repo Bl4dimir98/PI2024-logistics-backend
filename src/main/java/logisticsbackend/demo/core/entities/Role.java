@@ -1,4 +1,4 @@
-package logisticsbackend.demo.role;
+package logisticsbackend.demo.core.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

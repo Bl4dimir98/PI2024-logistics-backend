@@ -1,7 +1,5 @@
-package logisticsbackend.demo.user;
+package logisticsbackend.demo.core.entities;
 
-import logisticsbackend.demo.role.Role;
-import logisticsbackend.demo.tour.Tour;
 import lombok.Data;
 
 import java.util.HashSet;
