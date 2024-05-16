@@ -48,7 +48,7 @@ public class UserService {
             if (userUpdate.getDni() != null)
                 userExist.setDni(userUpdate.getDni());
             if (userUpdate.getPhone() != null)
-                userExist.setDni(userUpdate.getDni());
+                userExist.setPhone(userUpdate.getPhone());
             if (userUpdate.getEmail() != null)
                 userExist.setEmail(userUpdate.getEmail());
             if (userUpdate.getPassword() != null)
