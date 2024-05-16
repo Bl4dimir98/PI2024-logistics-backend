@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import logisticsbackend.demo.core.entities.Hotel;
+import logisticsbackend.demo.core.entities.Users;
 
-public interface HotelRepository extends CrudRepository<Hotel, Long> {
+public interface UserRepository extends CrudRepository<Users, Long> {
     @SuppressWarnings("null")
-    List<Hotel> findAll();
+    List<Users> findAll();
 }

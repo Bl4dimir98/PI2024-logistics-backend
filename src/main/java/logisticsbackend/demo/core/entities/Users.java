@@ -36,6 +36,7 @@ public class Users {
     private Integer emergencyPhone;
     private String disease;
     private String disability;
+    private Boolean enable;
 
     // * Relations*/
     @ManyToOne

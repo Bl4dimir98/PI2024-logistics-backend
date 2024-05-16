@@ -30,13 +30,13 @@ public class HotelController {
         return hotelService.save(hotel);
     }
 
-    // READ ALL
+    // GET ALL
     @GetMapping(value = "/hotels")
     public List<Hotel> getAll() {
         return hotelService.findAll();
     }
 
-    // READ BY ID
+    // GET BY ID
     @GetMapping(value = "/hotels/{id}")
     public Hotel getById(@PathVariable long id) {
         return hotelService.findById(id);
@@ -53,11 +53,11 @@ public class HotelController {
     public Hotel update(@RequestBody Hotel hotel) {
         return hotelService.save(hotel);
     }
-    
+
     // PARTIAL UPDATE
-    @PutMapping(value = "update/{id}")
+    @PutMapping(value = "hotels/{id}")
     public ResponseEntity<Hotel> updateById(@PathVariable long id, @RequestBody Hotel hotel) {
         return hotelService.updateById(id, hotel);
     }
-    
+
 }
