@@ -24,7 +24,7 @@ public class RoleController {
     private RoleService roleService;
 
     // CREATE ROLE
-    @PostMapping(value = "/")
+    @PostMapping(value = "/role")
     public Role save(@RequestBody Role role) {
         return roleService.save(role);
     }
@@ -37,7 +37,7 @@ public class RoleController {
 
     // GET BY ID
     @GetMapping(value = "/roles/{id}")
-    public Role findById(@PathVariable long id) {
+    public Role getById(@PathVariable long id) {
         return roleService.findById(id);
     }
 

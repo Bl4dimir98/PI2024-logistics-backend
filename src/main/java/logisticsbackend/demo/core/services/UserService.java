@@ -41,10 +41,10 @@ public class UserService {
             if (userExist == null)
                 return ResponseEntity.notFound().build();
             // Update each field
-            if (userUpdate.getNames() != null)
-                userExist.setNames(userUpdate.getNames());
             if (userUpdate.getFullNames() != null)
                 userExist.setFullNames(userUpdate.getFullNames());
+            if (userUpdate.getLastNames() != null)
+                userExist.setLastNames(userUpdate.getLastNames());
             if (userUpdate.getDni() != null)
                 userExist.setDni(userUpdate.getDni());
             if (userUpdate.getPhone() != null)

@@ -18,7 +18,7 @@ public class Hotel {
     private Integer phone;
     private String email;
     private Boolean enable;
-
+    
     // * Relations*/
     @ManyToOne
     private StarsCategory StarsCategory;

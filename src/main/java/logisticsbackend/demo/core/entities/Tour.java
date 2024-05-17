@@ -18,16 +18,15 @@ public class Tour {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String names;
+    private String name;
     private String description;
-    private String dni;
     private Integer price;
     private Integer days_duration;
-    private String tour_sector;
-    private Integer ability;
+    private String sector;
+    private Integer capacity_quotes;
     // private image
     private Date start_date;
-    private Boolean bull_status;
+    private Boolean enable;
 
     // * Relations*/
     @ManyToOne
@@ -38,9 +37,6 @@ public class Tour {
 
     @ManyToOne
     private Transport Transport;
-
-    // @ManyToMany
-    // private User User;
 
     @ManyToMany(mappedBy = "tours")
     private Set<Users> users = new HashSet<>();

@@ -9,55 +9,54 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import logisticsbackend.demo.core.entities.Hotel;
-import logisticsbackend.demo.core.services.HotelService;
-import org.springframework.web.bind.annotation.PutMapping;
+import logisticsbackend.demo.core.entities.Tour;
+import logisticsbackend.demo.core.services.TourService;
 
 @RestController
 @RequestMapping("api/v1")
 @CrossOrigin({ "*" })
-public class HotelController {
+public class TourController {
     @Autowired
-    private HotelService hotelService;
+    private TourService tourService;
 
     // CREATE
-    @PostMapping(value = "/hotel")
-    public Hotel save(@RequestBody Hotel hotel) {
-        return hotelService.save(hotel);
+    @PostMapping(value = "/tour")
+    public Tour save(@RequestBody Tour tour) {
+        return tourService.save(tour);
     }
 
     // GET ALL
-    @GetMapping(value = "/hotels")
-    public List<Hotel> getAll() {
-        return hotelService.findAll();
+    @GetMapping(value = "/tours")
+    public List<Tour> getAll() {
+        return tourService.findAll();
     }
 
     // GET BY ID
-    @GetMapping(value = "/hotels/{id}")
-    public Hotel getById(@PathVariable long id) {
-        return hotelService.findById(id);
+    @GetMapping(value = "/tours/{id}")
+    public Tour getById(@PathVariable long id) {
+        return tourService.findById(id);
     }
 
     // DELETE
     @DeleteMapping(value = "/{id}")
     public void deleteById(@PathVariable long id) {
-        hotelService.deleteById(id);
+        tourService.deleteById(id);
     }
 
     // UPDATE
-    @PutMapping(value = "/hotel/{id}")
-    public Hotel update(@RequestBody Hotel hotel) {
-        return hotelService.save(hotel);
+    @PutMapping(value = "/tour/{id}")
+    public Tour update(@RequestBody Tour tour) {
+        return tourService.save(tour);
     }
 
     // PARTIAL UPDATE
-    @PutMapping(value = "/hotels/{id}")
-    public ResponseEntity<Hotel> updateById(@PathVariable long id, @RequestBody Hotel hotel) {
-        return hotelService.updateById(id, hotel);
+    @PutMapping(value = "/tours/{id}")
+    public ResponseEntity<Tour> updateById(@PathVariable long id, @RequestBody Tour tour) {
+        return tourService.updateById(id, tour);
     }
-
 }

@@ -21,8 +21,8 @@ public class Users {
     @Id // Para identificar el id de la tabla en la BDD
     @GeneratedValue(strategy = GenerationType.AUTO) // Para generar un AutoId
     private long id;
-    private String names;
     private String fullNames;
+    private String lastNames;
     private String dni;
     private Integer phone;
     private String email;
