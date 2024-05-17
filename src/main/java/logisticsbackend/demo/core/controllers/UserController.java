@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import logisticsbackend.demo.core.entities.Users;
 import logisticsbackend.demo.core.services.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
@@ -25,7 +26,7 @@ public class UserController {
     private UserService userService;
 
     // CREATE
-    @PostMapping(value = "/user")
+    @PostMapping(value = "/users")
     public Users save(@RequestBody Users users) {
         return userService.save(users);
     }
@@ -43,19 +44,19 @@ public class UserController {
     }
 
     // DELETE
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "users/{id}")
     public void deleteById(@PathVariable long id) {
         userService.deleteById(id);
     }
 
     // UPDATE
-    @PutMapping(value = "user/{id}")
+    @PutMapping(value = "users/{id}")
     public Users update(@RequestBody Users users) {
         return userService.save(users);
     }
 
     // PARTIAL UPDATE
-    @PutMapping(value = "users/{id}")
+    @PatchMapping(value = "users/{id}")
     public ResponseEntity<Users> updateById(@PathVariable long id, @RequestBody Users users) {
         return userService.updateById(id, users);
     };

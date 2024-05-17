@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -25,7 +26,7 @@ public class StarsCategoryController {
     private StarsCategoryService starsCategoryService;
 
     // CREATE
-    @PostMapping(value = "/star")
+    @PostMapping(value = "/stars")
     public StarsCategory save(@RequestBody StarsCategory starsCategory) {
         return starsCategoryService.save(starsCategory);
     }
@@ -43,7 +44,7 @@ public class StarsCategoryController {
     }
 
     // DELETE
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/stars/{id}")
     public void deleteById(@PathVariable long id) {
         starsCategoryService.deleteById(id);
     }
@@ -55,7 +56,7 @@ public class StarsCategoryController {
     }
 
     // UPDATE PARTIAL
-    @PutMapping(value = "/stars/{id}")
+    @PatchMapping(value = "/stars/{id}")
     public ResponseEntity<StarsCategory> updateById(@PathVariable long id, @RequestBody StarsCategory starsCategory) {
         return starsCategoryService.updateById(id, starsCategory);
     }

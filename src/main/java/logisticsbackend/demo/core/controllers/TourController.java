@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -25,7 +26,7 @@ public class TourController {
     private TourService tourService;
 
     // CREATE
-    @PostMapping(value = "/tour")
+    @PostMapping(value = "/tours")
     public Tour save(@RequestBody Tour tour) {
         return tourService.save(tour);
     }
@@ -43,19 +44,19 @@ public class TourController {
     }
 
     // DELETE
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "tours/{id}")
     public void deleteById(@PathVariable long id) {
         tourService.deleteById(id);
     }
 
     // UPDATE
-    @PutMapping(value = "/tour/{id}")
+    @PutMapping(value = "/tours/{id}")
     public Tour update(@RequestBody Tour tour) {
         return tourService.save(tour);
     }
 
     // PARTIAL UPDATE
-    @PutMapping(value = "/tours/{id}")
+    @PatchMapping(value = "/tours/{id}")
     public ResponseEntity<Tour> updateById(@PathVariable long id, @RequestBody Tour tour) {
         return tourService.updateById(id, tour);
     }

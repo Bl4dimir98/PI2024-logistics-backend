@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,7 +26,7 @@ public class HotelController {
     private HotelService hotelService;
 
     // CREATE
-    @PostMapping(value = "/hotel")
+    @PostMapping(value = "/hotels")
     public Hotel save(@RequestBody Hotel hotel) {
         return hotelService.save(hotel);
     }
@@ -43,19 +44,19 @@ public class HotelController {
     }
 
     // DELETE
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "hotels/{id}")
     public void deleteById(@PathVariable long id) {
         hotelService.deleteById(id);
     }
 
     // UPDATE
-    @PutMapping(value = "/hotel/{id}")
+    @PutMapping(value = "/hotels/{id}")
     public Hotel update(@RequestBody Hotel hotel) {
         return hotelService.save(hotel);
     }
 
     // PARTIAL UPDATE
-    @PutMapping(value = "/hotels/{id}")
+    @PatchMapping(value = "/hotels/{id}")
     public ResponseEntity<Hotel> updateById(@PathVariable long id, @RequestBody Hotel hotel) {
         return hotelService.updateById(id, hotel);
     }

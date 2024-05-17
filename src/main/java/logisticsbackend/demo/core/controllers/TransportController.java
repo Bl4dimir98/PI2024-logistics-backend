@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -25,7 +26,7 @@ public class TransportController {
     private TransportService transportService;
 
     // CREATE
-    @PostMapping(value = "/transport")
+    @PostMapping(value = "/transports")
     public Transport save(@RequestBody Transport transport) {
         return transportService.save(transport);
     }
@@ -37,25 +38,25 @@ public class TransportController {
     }
 
     // GET BY ID
-    @GetMapping(value = "transports/{id}")
+    @GetMapping(value = "/transports/{id}")
     public Transport getById(@PathVariable long id) {
         return transportService.findById(id);
     }
 
     // DELETE
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/transports/{id}")
     public void deleteById(@PathVariable long id) {
         transportService.deleteById(id);
     }
 
     // UPDATE
-    @PutMapping(value = "/transport/{id}")
+    @PutMapping(value = "/transports/{id}")
     public Transport update(@RequestBody Transport transport) {
         return transportService.save(transport);
     }
 
     // PARTIAL UPDATE
-    @PutMapping(value = "/transports/{id}")
+    @PatchMapping(value = "/transports/{id}")
     public ResponseEntity<Transport> updateById(@PathVariable long id, @RequestBody Transport transport) {
         return transportService.updateById(id, transport);
     };
