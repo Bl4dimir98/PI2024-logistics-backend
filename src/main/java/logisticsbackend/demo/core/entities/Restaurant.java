@@ -14,8 +14,9 @@ public class Restaurant {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
-    private Integer price;
+    private String address;
     // private image
+    private Boolean enable;
 
     // * Relations*/
     @ManyToOne
