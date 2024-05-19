@@ -40,7 +40,7 @@ public class Users {
 
     // * Relations*/
     @ManyToOne
-    private Role Role;
+    private Role role;
 
     
     @ManyToMany(cascade = {CascadeType.ALL})
